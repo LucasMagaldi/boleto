@@ -11,9 +11,9 @@ class BoletoValidation{
         if(linha.length < 47 || linha.length > 48   ){
             return res.send(response).json(response).status(400)
         }
-        const boletoValidaNumber = await BoletoServices.validation(linha);
-        console.log(boletoValidaNumber)
-        return res.send(`boleto ${linha}`).status(200);
+        const boletoValida = await BoletoServices.validation(linha);
+        console.log(boletoValida)
+        return res.send(boletoValida).status(200);
     }
 }
 
